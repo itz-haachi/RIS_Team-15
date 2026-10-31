@@ -1,0 +1,13 @@
+N,model,choice,predicted_cov,predicted_snr,achieved_cov_RT,achieved_snr_RT
+1024,Phase 1 empty-world,R4 +15,26.8,-17.3,18.0,-10.0
+1024,Phase 1b blockage-aware,R1 +45,2.8,0.4,37.9,6.1
+1024,Phase 2 ray-traced optimum,R1 +30,,,38.8,6.3
+4096,Phase 1 empty-world,R2 +30,98.2,14.2,54.6,10.5
+4096,Phase 1b blockage-aware,R1 +45,70.3,9.3,92.9,17.2
+4096,Phase 2 ray-traced optimum,R1 +45,,,92.9,17.2
+9216,Phase 1 empty-world,R2 +30,100.0,21.3,76.7,16.8
+9216,Phase 1b blockage-aware,R1 +30,81.3,15.1,97.2,23.0
+9216,Phase 2 ray-traced optimum,R1 +30,,,97.2,23.0
+16384,Phase 1 empty-world,R2 +30,100.0,26.3,89.2,21.3
+16384,Phase 1b blockage-aware,R1 +30,81.3,19.3,97.6,27.9
+16384,Phase 2 ray-traced optimum,R1 +30,,,97.6,27.9

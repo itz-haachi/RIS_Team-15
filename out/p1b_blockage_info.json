@@ -1,0 +1,26 @@
+{
+ "R1": {
+  "BS_RIS_blocked": false,
+  "frac_UE_links_blocked": 0.18714555765595464
+ },
+ "R2": {
+  "BS_RIS_blocked": false,
+  "frac_UE_links_blocked": 0.569628229363579
+ },
+ "R3": {
+  "BS_RIS_blocked": true,
+  "frac_UE_links_blocked": 0.18399495904221802
+ },
+ "R4": {
+  "BS_RIS_blocked": true,
+  "frac_UE_links_blocked": 0.12350346565847511
+ },
+ "R5": {
+  "BS_RIS_blocked": true,
+  "frac_UE_links_blocked": 0.18399495904221802
+ },
+ "R6": {
+  "BS_RIS_blocked": false,
+  "frac_UE_links_blocked": 0.7725267800882167
+ }
+}
