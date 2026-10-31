@@ -1,0 +1,79 @@
+{
+ "summary": {
+  "n_UE": 1587,
+  "LOS_fraction": 0.004410838059231254,
+  "coverage_0dB": 0.37114051669817266,
+  "coverage_10dB": 0.16446124763705103,
+  "mean_SNR_dB": -13.912737366099558,
+  "median_SNR_dB": -7.0708,
+  "localmean_coverage_0dB": 0.4669187145557656,
+  "localmean_coverage_10dB": 0.2526780088216761,
+  "localmean_mean_SNR_dB": -6.843048456206681,
+  "mean_paths_per_UE": 15.906112161310649
+ },
+ "bands": [
+  {
+   "y_band_m": "10-20",
+   "n": 171,
+   "mean_SNR_dB": 11.2,
+   "coverage_0dB": 0.825,
+   "coverage_10dB": 0.655
+  },
+  {
+   "y_band_m": "20-30",
+   "n": 190,
+   "mean_SNR_dB": 9.5,
+   "coverage_0dB": 0.874,
+   "coverage_10dB": 0.6
+  },
+  {
+   "y_band_m": "30-40",
+   "n": 190,
+   "mean_SNR_dB": 3.2,
+   "coverage_0dB": 0.7,
+   "coverage_10dB": 0.163
+  },
+  {
+   "y_band_m": "40-50",
+   "n": 190,
+   "mean_SNR_dB": -0.5,
+   "coverage_0dB": 0.537,
+   "coverage_10dB": 0.021
+  },
+  {
+   "y_band_m": "50-60",
+   "n": 162,
+   "mean_SNR_dB": -6.7,
+   "coverage_0dB": 0.29,
+   "coverage_10dB": 0.0
+  },
+  {
+   "y_band_m": "60-70",
+   "n": 190,
+   "mean_SNR_dB": -34.6,
+   "coverage_0dB": 0.0,
+   "coverage_10dB": 0.0
+  },
+  {
+   "y_band_m": "70-80",
+   "n": 190,
+   "mean_SNR_dB": -37.1,
+   "coverage_0dB": 0.0,
+   "coverage_10dB": 0.0
+  },
+  {
+   "y_band_m": "80-90",
+   "n": 190,
+   "mean_SNR_dB": -39.2,
+   "coverage_0dB": 0.0,
+   "coverage_10dB": 0.0
+  },
+  {
+   "y_band_m": "90-100",
+   "n": 114,
+   "mean_SNR_dB": -36.6,
+   "coverage_0dB": 0.0,
+   "coverage_10dB": 0.0
+  }
+ ]
+}
