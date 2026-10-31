@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this scene, code or data, please cite the paper and this archive."
+title: "RIS-Assisted Coverage Enhancement in Blocked/NLOS Environments: scene, code and results"
+type: software
+authors:
+  - given-names: Amulyapreet
+    family-names: Kaur
+    orcid: "https://orcid.org/0009-0006-6120-1051"
+  - name: Akshaya
+    orcid: "https://orcid.org/0009-0006-1809-6110"
+  - given-names: Prisha
+    family-names: Sharan
+    orcid: "https://orcid.org/0009-0003-6397-3934"
+  - given-names: Avanti
+    family-names: Golatkar
+    orcid: "https://orcid.org/0009-0007-5246-4033"
+  - given-names: Kalaavathi
+    family-names: B.
+license: MIT
+version: "1.0.0"
+date-released: "2026-10-28"

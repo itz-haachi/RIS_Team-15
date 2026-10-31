@@ -1,0 +1,5 @@
+sionna-rt==2.2.0
+numpy
+scipy
+pandas
+matplotlib
