@@ -1,0 +1,14 @@
+<scene version="2.1.0">
+<bsdf type="itu-radio-material" id="mat-concrete"><string name="type" value="concrete"/><float name="thickness" value="0.3"/></bsdf>
+<bsdf type="itu-radio-material" id="mat-brick"><string name="type" value="brick"/><float name="thickness" value="0.3"/></bsdf>
+<bsdf type="itu-radio-material" id="mat-glass"><string name="type" value="glass"/><float name="thickness" value="0.1"/></bsdf>
+<bsdf type="itu-radio-material" id="mat-metal"><string name="type" value="metal"/><float name="thickness" value="0.01"/></bsdf>
+<bsdf type="itu-radio-material" id="mat-ground_concrete"><string name="type" value="concrete"/><float name="thickness" value="1.0"/></bsdf>
+<shape type="ply" id="mesh-ground"><string name="filename" value="meshes/ground.ply"/><boolean name="face_normals" value="true"/><ref id="mat-ground_concrete" name="bsdf"/></shape>
+<shape type="ply" id="mesh-B1_NW"><string name="filename" value="meshes/B1_NW.ply"/><boolean name="face_normals" value="true"/><ref id="mat-concrete" name="bsdf"/></shape>
+<shape type="ply" id="mesh-B2_NE"><string name="filename" value="meshes/B2_NE.ply"/><boolean name="face_normals" value="true"/><ref id="mat-brick" name="bsdf"/></shape>
+<shape type="ply" id="mesh-B3_SW"><string name="filename" value="meshes/B3_SW.ply"/><boolean name="face_normals" value="true"/><ref id="mat-glass" name="bsdf"/></shape>
+<shape type="ply" id="mesh-B4_SE"><string name="filename" value="meshes/B4_SE.ply"/><boolean name="face_normals" value="true"/><ref id="mat-concrete" name="bsdf"/></shape>
+<shape type="ply" id="mesh-K1_kiosk"><string name="filename" value="meshes/K1_kiosk.ply"/><boolean name="face_normals" value="true"/><ref id="mat-metal" name="bsdf"/></shape>
+<shape type="ply" id="mesh-T1_truck"><string name="filename" value="meshes/T1_truck.ply"/><boolean name="face_normals" value="true"/><ref id="mat-metal" name="bsdf"/></shape>
+</scene>
