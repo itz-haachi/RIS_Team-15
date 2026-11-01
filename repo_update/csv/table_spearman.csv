@@ -1,3 +1,0 @@
-model,reference,metric,n_sites,spearman_rho
-Phase 1 ideal,Phase 2 ray traced,"mean SNR at best orientation, N=16384",6,0.43
-Phase 1b blockage-aware,Phase 2 ray traced,"mean SNR at best orientation, N=16384",6,0.66
