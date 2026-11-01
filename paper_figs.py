@@ -54,13 +54,13 @@ for s in N_SIDES:
         rows.append(dict(N=s*s, resolution=BL[b], loss_db=float(f8[(f8.N == s*s) & (f8.resolution == "continuous")].mean_snr_db.iloc[0]
                                                                - f8[(f8.N == s*s) & (f8.resolution == BL[b])].mean_snr_db.iloc[0]), theory_db=theory[b]))
 f9 = pd.DataFrame(rows); f9.to_csv("csv/fig09_quantization_loss_vs_theory.csv", index=False)
-fig, ax = plt.subplots(figsize=(7, 4.2)); w = 0.25
+fig, ax = plt.subplots(figsize=(7, 4)); w = 0.2
 for i, b in enumerate((3, 2, 1)):
     d = f9[f9.resolution == BL[b]]
     ax.bar(np.arange(4) + (i-1)*w, d.loss_db, w, color=COL[b], label=f"{BL[b]} (measured)")
     ax.plot(np.arange(4) + (i-1)*w, d.theory_db, "_", color="k", ms=14, mew=2, label="theory sinc² bound" if i == 0 else None)
-ax.set_xticks(range(4)); ax.set_xticklabels(Ns); ax.set_xlabel("RIS elements N"); ax.set_ylabel("SNR loss vs continuous (dB)")
-ax.legend(frameon=False, fontsize=8); ax.set_title("Quantisation degradation vs theory")
+ax.set_ylim(0, 5.0); ax.set_xticks(range(4)); ax.set_xticklabels(Ns); ax.set_xlabel("RIS elements N"); ax.set_ylabel("SNR loss vs continuous (dB)")
+ax.legend(frameon=False, fontsize=8, ncol=4, loc="upper center", handlelength=1.5, columnspacing=1.2); ax.set_title("Quantisation degradation vs theory")
 plt.tight_layout(); plt.savefig("out/paper_fig09_quantization_loss_vs_theory.png", dpi=200)
 
 rows = []

@@ -30,5 +30,8 @@ for n in RIS_CAND:
 rk = pd.DataFrame(rk); rk.to_csv("out/three_model_per_candidate_N16384.csv", index=False); print(rk.to_string(index=False))
 
 from scipy.stats import spearmanr
-for m in ("1", "1b"):
-    print(m, "Spearman vs RT (mean SNR, N=16384):", round(spearmanr(rk[f"P{m}_snr"], rk["P2_snr"]).correlation, 2))
+sp = [dict(model={"1": "Phase 1 ideal", "1b": "Phase 1b blockage-aware"}[m], reference="Phase 2 ray traced",
+           metric="mean SNR at best orientation, N=16384", n_sites=len(rk),
+           spearman_rho=round(spearmanr(rk[f"P{m}_snr"], rk["P2_snr"]).correlation, 2)) for m in ("1", "1b")]
+import os; os.makedirs("csv", exist_ok=True)
+pd.DataFrame(sp).to_csv("csv/table_spearman.csv", index=False); print(pd.DataFrame(sp).to_string(index=False))

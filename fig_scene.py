@@ -15,7 +15,7 @@ for n,(x0,x1,y0,y1,h,m) in g["buildings"].items():
 X0,X1,Y0,Y1 = g["ground"]
 ax.add_collection3d(Poly3DCollection([[(X0,Y0,0),(X1,Y0,0),(X1,Y1,0),(X0,Y1,0)]], facecolor="#e9e7e1", alpha=0.3))
 ue,valid,_ = ue_grid()
-ax.scatter(ue[valid,0],ue[valid,1],ue[valid,2],s=0.6,c="#2a78d6",alpha=0.5,label="UE grid (1,615 pts, side street)")
+ax.scatter(ue[valid,0],ue[valid,1],ue[valid,2],s=0.6,c="#2a78d6",alpha=0.5,label="UE grid (1,587 pts, side street)")
 ax.scatter(*BS, s=90, c="#e34948", marker="^", depthshade=False, label="BS (28 GHz, 10 m)")
 for k,(c,yaw) in RIS_CAND.items():
     ax.scatter(*c, s=60, c="#eb6834", marker="s", depthshade=False)
