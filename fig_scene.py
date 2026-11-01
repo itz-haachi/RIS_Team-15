@@ -45,3 +45,10 @@ for k,(c,yaw) in RIS_CAND.items():
 ax.set_xlim(-100,120); ax.set_ylim(-60,100); ax.set_aspect("equal"); ax.set_xlabel("x (m)"); ax.set_ylabel("y (m)")
 ax.set_title("Top view (arrows = RIS facade normal)")
 plt.tight_layout(); plt.savefig("out/fig_scene_top.png", dpi=200)
+
+a = plt.imread("out/fig_scene_3d.png"); b = plt.imread("out/fig_scene_top.png")
+fig = plt.figure(figsize=(12.49, 4.83), dpi=300)
+ax1 = fig.add_axes([0.0, 0.07, 0.56, 0.93]); ax2 = fig.add_axes([0.57, 0.07, 0.43, 0.93])
+for ax, im, t in ((ax1, a, "(a) 3D view"), (ax2, b, "(b) top view with RIS candidates and facade normals")):
+    ax.imshow(im); ax.axis("off"); ax.set_title(t, y=-0.08, fontsize=9)
+fig.savefig("out/final_fig_scene.png", dpi=300, facecolor="white")

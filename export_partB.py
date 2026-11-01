@@ -19,11 +19,17 @@ def paths_df(prefix, tx_names, rx_names):
                     first_vertex_x=vf[r,t,k,0], first_vertex_y=vf[r,t,k,1], first_vertex_z=vf[r,t,k,2],
                     last_vertex_x=vl[r,t,k,0], last_vertex_y=vl[r,t,k,1], last_vertex_z=vl[r,t,k,2]))
     return pd.DataFrame(rows)
+def rnd(df, n, skip):
+    return df.round({c: n for c in df.columns if c not in skip})
+def keep_amp(df, cols):
+    df = df.copy()
+    for c in cols: df[c] = df[c].map(lambda v: f"{v:.6e}")
+    return df
 ue_names = [f"UE{i:04d}" for i in range(len(ue))]
 ris = list(RIS_CAND)
-paths_df("d", ["BS"], ue_names).round(6).to_csv(f"{O}/channel_paths_BS_to_UE.csv", index=False)
-paths_df("g", ["BS"], ris).round(6).to_csv(f"{O}/channel_paths_BS_to_RIS.csv", index=False)
-pd.concat([paths_df(f"h{n}", [n], ue_names) for n in ris]).round(6).to_csv(f"{O}/channel_paths_RIS_to_UE.csv", index=False)
+keep_amp(rnd(paths_df("d", ["BS"], ue_names), 6, ["amp_real", "amp_imag"]), ["amp_real", "amp_imag"]).to_csv(f"{O}/channel_paths_BS_to_UE.csv", index=False)
+keep_amp(rnd(paths_df("g", ["BS"], ris), 6, ["amp_real", "amp_imag"]), ["amp_real", "amp_imag"]).to_csv(f"{O}/channel_paths_BS_to_RIS.csv", index=False)
+keep_amp(rnd(pd.concat([paths_df(f"h{n}", [n], ue_names) for n in ris]), 6, ["amp_real", "amp_imag"]), ["amp_real", "amp_imag"]).to_csv(f"{O}/channel_paths_RIS_to_UE.csv", index=False)
 
 a = d["d_a"][:, 0]; dep = d["d_depth"][:, 0]
 pg = np.sum(np.abs(a)**2, -1); los = np.any((dep == 0) & (np.abs(a) > 0), -1)
@@ -34,8 +40,10 @@ snr_avg = PT_DBM + 10*np.log10(np.maximum(pg, 1e-30)) - NOISE_DBM
 ue_df = pd.DataFrame(dict(ue=ue_names, x_m=ue[:,0], y_m=ue[:,1], z_m=ue[:,2], valid=valid, LOS=los,
     n_paths=(np.abs(a) > 0).sum(-1), path_gain_dB=10*np.log10(np.maximum(pg_coh,1e-30)),
     rx_power_dBm=PT_DBM+10*np.log10(np.maximum(pg_coh,1e-30)), SNR_dB=snr, SNR_localmean_dB=snr_avg,
-    hd_real=hd.real, hd_imag=hd.imag, covered_0dB=snr >= 0, covered_10dB=snr >= 10)).round(4)
-ue_df.to_csv(f"{O}/noRIS_baseline_per_UE.csv", index=False)
+    hd_real=hd.real, hd_imag=hd.imag, covered_0dB=snr >= 0, covered_10dB=snr >= 10))
+hd_cols = ["hd_real", "hd_imag"]
+ue_df = ue_df.round({c: 4 for c in ue_df.columns if c not in hd_cols})
+keep_amp(ue_df, hd_cols).to_csv(f"{O}/noRIS_baseline_per_UE.csv", index=False)
 
 ga = d["g_a"][:, 0]; gd = d["g_depth"][:, 0]
 rows = []
