@@ -1,6 +1,3 @@
-\
-\
-
 import numpy as np, json
 from config import *
 from analysis import cascade, direct, SUBS, PT, SIG2

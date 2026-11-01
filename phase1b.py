@@ -1,7 +1,3 @@
-\
-\
-\
-
 import json, numpy as np, time
 from config import *
 from analysis import per_element, snr_from, SUBS, NMAX, PT, SIG2

@@ -1,5 +1,3 @@
-\
-
 import json, numpy as np
 import plotly.graph_objects as go
 from config import RIS_CAND

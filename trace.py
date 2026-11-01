@@ -1,5 +1,3 @@
-\
-
 import time, numpy as np, sionna.rt as rt, mitsuba as mi
 from config import *
 
